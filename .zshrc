@@ -137,3 +137,8 @@ if [ $(ps ax | grep "[s]sh-agent" | wc -l) -eq 0 ] ; then
     ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
     fi
 fi
+
+# fnm
+export PATH="/home/jake/.local/share/fnm:$PATH"
+eval "`fnm env`"
+fpath=(/home/$USER/.config/fnm/completions $fpath)
