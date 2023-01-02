@@ -23,6 +23,7 @@ local freedesktop   = require("freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup")
                       require("awful.hotkeys_popup.keys")
 local mytable       = awful.util.table or gears.table -- 4.{0,1} compatibility
+local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 
 -- }}}
 
@@ -199,7 +200,6 @@ awful.util.mymainmenu = freedesktop.menu.build {
 }
 
 -- Hide the menu when the mouse leaves it
---[[
 awful.util.mymainmenu.wibox:connect_signal("mouse::leave", function()
     if not awful.util.mymainmenu.active_child or
        (awful.util.mymainmenu.wibox ~= mouse.current_wibox and
@@ -214,7 +214,6 @@ awful.util.mymainmenu.wibox:connect_signal("mouse::leave", function()
         end)
     end
 end)
---]]
 
 -- Set the Menubar terminal for applications that require it
 --menubar.utils.terminal = terminal
@@ -471,6 +470,7 @@ globalkeys = mytable.join(
     awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 10") end,
               {description = "-10%", group = "hotkeys"}),
 
+
     -- ALSA volume control
     awful.key({ altkey }, "Up",
         function ()
@@ -567,16 +567,16 @@ globalkeys = mytable.join(
     --]]
     -- alternatively use rofi, a dmenu-like application with more features
     -- check https://github.com/DaveDavenport/rofi for more details
-    --[[ rofi
-    awful.key({ modkey }, "x", function ()
+    -- rofi
+    awful.key({ modkey }, "r", function ()
             os.execute(string.format("rofi -show %s -theme %s",
             'run', 'dmenu'))
         end,
         {description = "show rofi", group = "launcher"}),
-    --]]
+    
     -- Prompt
-    awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
-              {description = "run prompt", group = "launcher"}),
+    --awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
+     --         {description = "run prompt", group = "launcher"}),
 
     awful.key({ modkey }, "x",
               function ()
