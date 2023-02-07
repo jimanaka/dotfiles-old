@@ -8,6 +8,7 @@ local servers = {
 	"jsonls",
 	-- "yamlls",
   "clangd",
+  "rust_analyzer",
   "texlab",
 }
 
