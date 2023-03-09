@@ -10,6 +10,7 @@ local servers = {
   "clangd",
   "rust_analyzer",
   "texlab",
+  "asm_lsp",
 }
 
 local settings = {
