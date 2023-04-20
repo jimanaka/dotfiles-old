@@ -8,7 +8,7 @@ Portable configuration files for standing up new machines. Mainly for Arch Linux
 The following instructions were adapted from [these instructions](https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/) by Gabrielle Young. Refer to the link for more background information on this process.
 
 1. Add .dotfiles to the global Git ingore so the repo does not track itself
-    * `$ echo ".dotfiles" >> $HOME/.gitignore`
+`$ echo ".dotfiles" >> $HOME/.gitignore`
 2. Clone the Git repo
     * `$ git clone https://github.com/jimanaka/dotfiles.git $HOME/.dotfiles --bare`
 3. Create command alias
