@@ -9,7 +9,24 @@ The following instructions were adapted from [these instructions](https://www.ac
 
 1. Add .dotfiles to the global Git ingore so the repo does not track itself
     * `$ echo ".dotfiles" >> $HOME/.gitignore`
-2. test 
+2. Clone the Git repo
+    * `$ git clone https://github.com/jimanaka/dotfiles.git $HOME/.dotfiles --bare`
+3. Create command alias
+    * `$ alias dotfiles='/usr/bin/git --git-dir=$home/.dotfiles --work-tree=$HOME`
+4. Ignore untracked files. This lets us manually choose what to include instead of tracking everything in the home directory
+    * `$ dotfiles config --local status.showUntrackedFiles no`
+5. Checkout the git content. Pulls files from compressed database into the correct locations
+    * `$ dotfiles checkout`
+6. Handling Errors
+    * If you see errors similar to:
+    ```
+    [-] error: The following untracked working tree files would be overwritten by checkout:
+        .zshrc
+        .gitignore
+    Please move or remove them before you can switch branches.
+    Aborting
+    ```
+    * This occurs due to already-existing files on your computer overlapping with the dotfiles. Fix this by by backing up or deleting the overlapping files, then run `$ config checkout`
 
 
 ## Vim
