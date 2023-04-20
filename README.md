@@ -2,6 +2,7 @@
 Portable configuration files for standing up new machines. Mainly for Arch Linux, but I may add instructions for other distros, idk.
 
 * [Getting Started](#getting-started)
+    * [Installing Full Repo](##installing-full-repo)
 
 ## Getting Started
 ### Installing Full Repo
@@ -33,7 +34,7 @@ $ dotfiles checkout
 ```
 
 6. Handling Errors
-    * If you see errors similar to:
+If you see errors similar to :
 ```sh
 [-] error: The following untracked working tree files would be overwritten by checkout:
     .zshrc
@@ -41,7 +42,7 @@ $ dotfiles checkout
 Please move or remove them before you can switch branches.
 Aborting
 ```
-    * This occurs due to already-existing files on your computer overlapping with the dotfiles. Fix this by by backing up or deleting the overlapping files, then run 
+It means you have already-existing files on your machine that conflicts with the repo. To resolve this, backup or delete the conflicting files and run:
 ```sh 
 $ config checkout 
 ```
