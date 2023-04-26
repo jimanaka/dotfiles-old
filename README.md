@@ -4,12 +4,15 @@ Portable configuration files for standing up new machines. Mainly for Arch Linux
 ## Index
 * [Getting Started](#getting-started)
     * [Installing Full Repo](#installing-full-repo)
+* [Zsh](#zsh)
+* [Powerlevel10k](#powerlevel10k)
+* [Install Fonts](#install-fonts)
 
 ## Getting Started
 ### Installing Full Repo
 The following instructions were adapted from [these instructions](https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/) by Gabrielle Young. Refer to the link for more background information on this process.  
 
-Continue to each tools setup from the [Index](#index)
+After installing the repo, continue to each tools setup from the [Index](#index)
 
 1. Add .dotfiles to the global Git ingore so the repo does not track itself
 ```bash
@@ -79,4 +82,40 @@ use [DownGit](https://minhaskamal.github.io/DownGit/#/home)
 
 
 
-## Vim
+## Zsh
+1. Install Zsh
+```bash
+$ sudo pacman -S zsh
+```
+oh-my-zsh should be automatically installed. If it isn't, continue 
+
+2. Download oh-my-zsh
+```bash
+wget --no-check-certificate http://install.ohmyz.sh -O - | sh
+```
+
+## Powerlevel10k
+Powerlevel10k should also be installed automatically. If not, continue
+
+1. CLone the repo
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+2. set the theme in ~.zshrc
+```
+ZSH_THEME="powerlevel10k/powerlevel10k"
+```
+
+## Install Fonts
+1. Download the following fonts
+    * [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+    * [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
+    * [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
+    * [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
+
+2. Either click on the fonts, or install them to `/usr/share/fonts/MesloLGS/`
+3. Set your terminal font to MesloLGS. This should automatically happen in alacritty.
+
+
+
