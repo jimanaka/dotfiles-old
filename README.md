@@ -70,5 +70,8 @@ $ echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 $ echo "source $HOME/.zsh/aliases" >> $HOME/.zshrc
 ```
 
+### Installing Individual Configuration Files
+
+
 
 ## Vim
