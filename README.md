@@ -47,5 +47,28 @@ It means you have already-existing files on your machine that conflicts with the
 $ config checkout 
 ```
 
+### Setting Up New Bare Git Repos 
+This isn't useful for setting up new machines with this Git repo, but I'll put this here for the purpose of creating new dotfile repos
+
+1. Initialize a bare repo
+```sh
+$ git init --bare $HOME/.dotfiles
+```
+
+2. Create command alias
+```sh
+$ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+```
+
+3. Add alias to zsh config. You can also do this on bash, but with .bashrc
+```sh
+$ echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zsh/aliases
+```
+
+4. Source the alias in the zshrc file
+```sh
+$ echo "source $HOME/.zsh/aliases" >> $HOME/.zshrc
+```
+
 
 ## Vim
