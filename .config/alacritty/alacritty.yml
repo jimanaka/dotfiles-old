@@ -77,3 +77,4 @@ colors:
 
 key_bindings:
   - { key: Back, mods: Control, chars: "\u0017" }
+
