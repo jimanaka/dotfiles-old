@@ -80,6 +80,13 @@ $ echo "source $HOME/.zsh/aliases" >> $HOME/.zshrc
 ### Installing Individual Configuration Files
 use [DownGit](https://minhaskamal.github.io/DownGit/#/home)
 
+### Dependencies
+* AwesomeWM Rice
+```bash
+yay -S --needed awesome-git polybar picom-pijulius-git alacritty betterlockscreen catppuccin-gtk-theme-mocha conky logo-ls lxappearance neovim neofetch papirus-icon-theme feh rofi xidlehook sddm qt5-graphicaleffects qt5-quickcontrols2 qt5-svg
+```
+* TODO: List more dependencies
+
 
 
 
