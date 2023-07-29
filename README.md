@@ -27,7 +27,7 @@ git clone https://github.com/jimanaka/dotfiles.git $HOME/.dotfiles --bare
 
 3. Create command alias
 ```bash
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 ```
 
 4. Ignore untracked files. This lets us manually choose what to include instead of tracking everything in the home directory
