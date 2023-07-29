@@ -17,27 +17,27 @@ After installing the repo, continue to each tools setup from the [Index](#index)
 
 1. Add .dotfiles to the global Git ingore so the repo does not track itself
 ```bash
-$ echo ".dotfiles" >> $HOME/.gitignore
+echo ".dotfiles" >> $HOME/.gitignore
 ```
 
 2. Clone the Git repo
 ```bash
-$ git clone https://github.com/jimanaka/dotfiles.git $HOME/.dotfiles --bare
+git clone https://github.com/jimanaka/dotfiles.git $HOME/.dotfiles --bare
 ```
 
 3. Create command alias
 ```bash
-$ alias dotfiles='/usr/bin/git --git-dir=$home/.dotfiles --work-tree=$HOME
+alias dotfiles='/usr/bin/git --git-dir=$home/.dotfiles --work-tree=$HOME
 ```
 
 4. Ignore untracked files. This lets us manually choose what to include instead of tracking everything in the home directory
 ```bash
-$ dotfiles config --local status.showUntrackedFiles no 
+dotfiles config --local status.showUntrackedFiles no 
 ```
 
 5. Checkout the git content. Pulls files from compressed database into the correct locations
 ```bash
-$ dotfiles checkout 
+dotfiles checkout 
 ```
 
 6. Handling Errors
@@ -51,7 +51,7 @@ Aborting
 ```
 It means you have already-existing files on your machine that conflicts with the repo. To resolve this, backup or delete the conflicting files and run:
 ```bash 
-$ config checkout 
+config checkout 
 ```
 
 ### Setting Up New Bare Git Repos 
@@ -59,22 +59,22 @@ This isn't useful for setting up new machines with this Git repo, but I'll put t
 
 1. Initialize a bare repo
 ```bash
-$ git init --bare $HOME/.dotfiles
+git init --bare $HOME/.dotfiles
 ```
 
 2. Create command alias
 ```bash
-$ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ```
 
 3. Add alias to zsh config. You can also do this on bash, but with .bashrc
 ```bash
-$ echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zsh/aliases
+echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zsh/aliases
 ```
 
 4. Source the alias in the zshrc file
 ```bash
-$ echo "source $HOME/.zsh/aliases" >> $HOME/.zshrc
+echo "source $HOME/.zsh/aliases" >> $HOME/.zshrc
 ```
 
 ### Installing Individual Configuration Files
@@ -93,7 +93,7 @@ yay -S --needed awesome-git polybar picom-pijulius-git alacritty betterlockscree
 ## Zsh
 1. Install Zsh
 ```bash
-$ sudo pacman -S zsh
+sudo pacman -S zsh
 ```
 oh-my-zsh should be automatically installed. If it isn't, continue 
 
