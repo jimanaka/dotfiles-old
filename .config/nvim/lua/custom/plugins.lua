@@ -2,18 +2,11 @@ local overrides = require("custom.configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
+
   -- Override plugin definition options
+
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      -- format & linting
-      {
-        "mfussenegger/nvim-lint",
-        config = function()
-          require "custom.configs.lint"
-        end,
-      },
-    },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
@@ -36,26 +29,28 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
+  -- Install a plugin
   {
-    "hrsh7th/nvim-cmp",
-    opts = overrides.cmp,
+    "max397574/better-escape.nvim",
+    event = "InsertEnter",
+    config = function()
+      require("better_escape").setup()
+    end,
   },
 
-  -- Install a plugin
-  
+  {
+    "stevearc/conform.nvim",
+    --  for users those who want auto-save conform + lazyloading!
+    -- event = "BufWritePre"
+    config = function()
+      require "custom.configs.conform"
+    end,
+  },
+
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   }
-
-  -- {
-  --   "max397574/better-escape.nvim",
-  --   event = "InsertEnter",
-  --   config = function()
-  --     require("better_escape").setup()
-  --   end,
-  -- },
-
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

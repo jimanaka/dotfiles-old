@@ -1,19 +1,20 @@
+-- local autocmd = vim.api.nvim_create_autocmd
+
 -- Auto resize panes when resizing nvim window
 -- autocmd("VimResized", {
 --   pattern = "*",
 --   command = "tabdo wincmd =",
 -- })
+
 local opt = vim.opt
 local g = vim.g
 
+opt.relativenumber = true
+opt.ignorecase = true
+opt.smartcase = true
+
 local autocmd = vim.api.nvim_create_autocmd
 local function open_nvim_tree(data)
-
-  opt.relativenumber = true
-
-  -- search settings
-  opt.ignorecase = true
-  opt.smartcase = true
 
   -- buffer is a directory
   local directory = vim.fn.isdirectory(data.file) == 1

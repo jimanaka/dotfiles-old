@@ -37,13 +37,24 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
-
-    -- linting
-    "eslint_d"
   },
 }
 
 -- git support in nvimtree
+-- M.nvimtree = {
+--   git = {
+--     enable = true,
+--   },
+--
+--   renderer = {
+--     highlight_git = true,
+--     icons = {
+--       show = {
+--         git = true,
+--       },
+--     },
+--   },
+-- }
 M.nvimtree = {
   git = {
     enable = true,
@@ -98,23 +109,6 @@ M.nvimtree = {
   --     },
   --   },
   -- },
-}
-
-local cmp = require("cmp")
-M.cmp = {
-  mapping = {
-    ["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
-    ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    -- Accept currently selected item. If none selected, `select` first item.
-    -- Set `select` to `false` to only confirm explicitly selected items.
-    ["<CR>"] = cmp.mapping.confirm { select = false },
-    ["<Tab>"] = cmp.config.disable,
-    ["<S-Tab"] = cmp.config.disable,
-  },
-  completion = {
-    completeopt = "menuone,noselect",
-  },
 }
 
 return M

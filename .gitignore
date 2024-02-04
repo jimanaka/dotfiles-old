@@ -1,2 +1,4 @@
 .dotfiles
 netrwhist
+~/.config/nvim/.git
+~/.config/nvim/.github
