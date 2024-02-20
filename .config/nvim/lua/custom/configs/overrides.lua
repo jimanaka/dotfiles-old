@@ -13,6 +13,7 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "python",
+    "rust",
   },
   indent = {
     enable = true,
@@ -34,6 +35,7 @@ M.mason = {
     "typescript-language-server",
     "deno",
     "prettier",
+    "tailwindcss-language-server",
 
     -- c/cpp stuff
     "clangd",
@@ -43,6 +45,8 @@ M.mason = {
     "python-lsp-server",
     "autopep8",
 
+    -- rust
+    "rust-analyzer"
   },
 }
 
@@ -101,7 +105,7 @@ M.nvimtree = {
     enable = true,
     show_on_dirs = true,
     icons = {
-      hint = "",
+      hint = "",
       info = "",
       warning = "",
       error = "",
